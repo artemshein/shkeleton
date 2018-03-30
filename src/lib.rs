@@ -3,25 +3,26 @@
 //! The idea behind a Shkeleton is that you don't need to update all the dependencies by hand for
 //! every your library or binary, you could just update a Shkeleton version and get all updates.
 //! ## Dependencies
-//! * log -- logging facade
-//! * byteorder -- dealing with data reading/writing
-//! * lazy_static -- macro to define a lazy static constants
-//! * array_tool -- utilities for dealing with arrays
-//! * itertools -- utilities for dealing with iterators
-//! * regex -- regular expressions
-//! * url -- handling URLs
+//! * log - logging facade
+//! * byteorder - dealing with data reading/writing
+//! * lazy_static - macro to define a lazy static constants
+//! * array_tool - utilities for dealing with arrays
+//! * itertools - utilities for dealing with iterators
+//! * regex - regular expressions
+//! * url - handling URLs
 //! ## Features
 //! Shkeleton also defines a few features which extend the dependencies list and APIs.
 //!
 //! ### CLI feature
 //! Additional dependencies:
-//! * clap -- define your command line arguments parser
+//! * clap - define your command line arguments parser
+//! * simple_logger - logger implementation
 //!
 //! ### Concurrency feature
 //! Additional dependencies:
-//! * scoped-pool -- define and use a thread pool
-//! * num_cpus -- get the number of CPUs and cores available
-//! * parking_lot -- faster syncronization primitives
+//! * scoped-pool - define and use a thread pool
+//! * num_cpus - get the number of CPUs and cores available
+//! * parking_lot - faster syncronization primitives
 //! Concurrency feature also defines a facade for RwLock, which allowes to hide an implementation
 //! (std::sync::RwLock or parking_lot::RwLock) behind this facade and switch implementation without
 //! the need to update sources. It could be valuable because the parking_lot implementation
@@ -41,6 +42,8 @@ pub extern crate url;
 
 #[cfg(feature = "cli")]
 pub extern crate clap;
+#[cfg(feature = "cli")]
+pub extern crate simple_logger;
 
 #[cfg(feature = "concurrency")]
 pub extern crate scoped_pool;
@@ -50,3 +53,22 @@ pub extern crate num_cpus;
 pub extern crate parking_lot;
 
 pub use shkeleton::sync;
+
+pub use log::*;
+pub use byteorder::*;
+pub use itertools::*;
+pub use array_tool::*;
+pub use regex::*;
+pub use url::*;
+
+#[cfg(feature = "cli")]
+pub use clap::*;
+#[cfg(feature = "cli")]
+pub use simple_logger::*;
+
+#[cfg(feature = "concurrency")]
+pub use scoped_pool::*;
+#[cfg(feature = "concurrency")]
+pub use num_cpus::*;
+#[cfg(feature = "concurrency")]
+pub use parking_lot::*;
