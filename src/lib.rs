@@ -39,6 +39,8 @@ pub extern crate itertools;
 pub extern crate array_tool;
 pub extern crate regex;
 pub extern crate url;
+#[macro_use]
+pub extern crate lazy_static;
 
 #[cfg(feature = "cli")]
 pub extern crate clap;
@@ -54,6 +56,7 @@ pub extern crate parking_lot;
 
 pub use shkeleton::sync;
 
+pub use lazy_static::*;
 pub use log::*;
 pub use byteorder::*;
 pub use itertools::*;
