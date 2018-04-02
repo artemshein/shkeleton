@@ -16,7 +16,8 @@
 //! ### CLI feature
 //! Additional dependencies:
 //! * clap - define your command line arguments parser
-//! * simple_logger - logger implementation
+//! * fern - complex logger implementation
+//! * [deprecated] simple_logger - simple logger implementation
 //!
 //! ### Concurrency feature
 //! Additional dependencies:
@@ -46,6 +47,8 @@ pub extern crate lazy_static;
 pub extern crate clap;
 #[cfg(feature = "cli")]
 pub extern crate simple_logger;
+#[cfg(feature = "cli")]
+pub extern crate fern;
 
 #[cfg(feature = "concurrency")]
 pub extern crate scoped_pool;
@@ -68,6 +71,8 @@ pub use url::*;
 pub use clap::*;
 #[cfg(feature = "cli")]
 pub use simple_logger::*;
+#[cfg(feature = "cli")]
+pub use fern::*;
 
 #[cfg(feature = "concurrency")]
 pub use scoped_pool::*;
