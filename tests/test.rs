@@ -1,5 +1,9 @@
 #[macro_use]
 extern crate shkeleton;
+#[macro_use]
+extern crate derive_more;
+#[macro_use]
+extern crate derive_deref;
 
 use shkeleton::*;
 
@@ -8,6 +12,9 @@ lazy_static! {
         10
     };
 }
+
+#[derive(From, Deref)]
+struct A(pub u32);
 
 #[test]
 fn test_compile() {

@@ -10,6 +10,8 @@
 //! * itertools - utilities for dealing with iterators
 //! * regex - regular expressions
 //! * url - handling URLs
+//! * derive_more & derive_deref - more derive implementations
+//!
 //! ## Features
 //! Shkeleton also defines a few features which extend the dependencies list and APIs.
 //!
@@ -28,6 +30,18 @@
 //! (std::sync::RwLock or parking_lot::RwLock) behind this facade and switch implementation without
 //! the need to update sources. It could be valuable because the parking_lot implementation
 //! lacks "lock poisoning" and maybe harder to debug deadlocks.
+//!
+//! ### Limitations
+//! Due to current Rust macro system limitations in order to use derive macros from the derive_deref
+//! or derive_more crates you need to import them manually:
+//!
+//! ```ignore
+//! #[macro_use]
+//! extern crate derive_more;
+//! #[macro_use]
+//! extern crate derive_deref;
+//! ```
+//!
 mod shkeleton;
 
 #[allow(unused_imports)]
@@ -40,6 +54,7 @@ pub extern crate itertools;
 pub extern crate array_tool;
 pub extern crate regex;
 pub extern crate url;
+#[allow(unused_imports)]
 #[macro_use]
 pub extern crate lazy_static;
 
