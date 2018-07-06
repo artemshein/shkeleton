@@ -1,7 +1,7 @@
 //! Shkeleton is a skeleton Rust project which defines some default dependencies and contains some
 //! common API's.
-//! The idea behind a Shkeleton is that you don't need to update all the dependencies by hand for
-//! every your library or binary, you could just update a Shkeleton version and get all updates.
+//! The idea behind Shkeleton is that you don't need to update all the dependencies by hand for
+//! every your library or binary, you could just update Shkeleton version and get all updates.
 //! ## Dependencies
 //! * log - logging facade
 //! * byteorder - dealing with data reading/writing
