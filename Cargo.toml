@@ -1,6 +1,6 @@
 [package]
 name = "shkeleton"
-version = "0.1.6"
+version = "0.1.7"
 authors = ["Artem Shein <sc-github@aisys.ru>"]
 
 description = "Skeleton rust project"
@@ -24,8 +24,14 @@ clap = { version = "2", optional = true }
 scoped-pool = { version = "1", optional = true }
 num_cpus = { version = "1", optional = true }
 parking_lot = { version = "0.6", optional = true }
+glob = { version = "0.2", optional = true }
 
 [features]
 default = []
-cli = ["clap", "simple_logger", "fern"]
+cli = ["clap", "simple_logger", "fern", "glob"]
 concurrency = ["scoped-pool", "num_cpus", "parking_lot"]
+
+[[test]]
+name = "test"
+path = "tests/test.rs"
+required-features = ["cli", "concurrency"]

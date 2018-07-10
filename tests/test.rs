@@ -18,10 +18,13 @@ struct A(pub u32);
 
 #[test]
 fn test_compile() {
+    let _num_cpus = get_num_cpus(); // num_cpus
+    let _mo = MatchOptions::new(); // glob
     let _rw = sync::RwLock::new(10);
     info!("Message {}", *TEST);
     let _regex = Regex::new("[abc]+").unwrap();
     Url::parse("http://abc.ru").unwrap();
     let mut cur = std::io::Cursor::new(vec![0u8; 8]);
     let _be = cur.read_u64::<BigEndian>().unwrap();
+    let _log_level = fern::log::Level::Error; // fern
 }

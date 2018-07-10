@@ -20,6 +20,7 @@
 //! * clap - define your command line arguments parser
 //! * fern - complex logger implementation
 //! * [deprecated] simple_logger - simple logger implementation
+//! * glob - dealing with glob patterns
 //!
 //! ### Concurrency feature
 //! Additional dependencies:
@@ -64,6 +65,8 @@ pub extern crate clap;
 pub extern crate simple_logger;
 #[cfg(feature = "cli")]
 pub extern crate fern;
+#[cfg(feature = "cli")]
+pub extern crate glob;
 
 #[cfg(feature = "concurrency")]
 pub extern crate scoped_pool;
@@ -88,6 +91,8 @@ pub use clap::*;
 pub use simple_logger::*;
 #[cfg(feature = "cli")]
 pub use fern::*;
+#[cfg(feature = "cli")]
+pub use glob::*;
 
 #[cfg(feature = "concurrency")]
 pub use scoped_pool::*;
