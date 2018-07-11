@@ -58,11 +58,13 @@ pub extern crate url;
 #[allow(unused_imports)]
 #[macro_use]
 pub extern crate lazy_static;
+#[macro_use]
+pub extern crate derive_more;
+#[macro_use]
+pub extern crate derive_deref;
 
 #[cfg(feature = "cli")]
 pub extern crate clap;
-#[cfg(feature = "cli")]
-pub extern crate simple_logger;
 #[cfg(feature = "cli")]
 pub extern crate fern;
 #[cfg(feature = "cli")]
@@ -77,26 +79,7 @@ pub extern crate parking_lot;
 
 pub use shkeleton::sync;
 
-pub use lazy_static::*;
 pub use log::*;
-pub use byteorder::*;
-pub use itertools::*;
-pub use array_tool::*;
-pub use regex::*;
-pub use url::*;
-
-#[cfg(feature = "cli")]
-pub use clap::*;
-#[cfg(feature = "cli")]
-pub use simple_logger::*;
-#[cfg(feature = "cli")]
-pub use fern::*;
-#[cfg(feature = "cli")]
-pub use glob::*;
-
-#[cfg(feature = "concurrency")]
-pub use scoped_pool::*;
-#[cfg(feature = "concurrency")]
-pub use num_cpus::*;
-#[cfg(feature = "concurrency")]
-pub use parking_lot::*;
+pub use derive_more::*;
+pub use derive_deref::*;
+pub use lazy_static::*;
