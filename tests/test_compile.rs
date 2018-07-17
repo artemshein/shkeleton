@@ -5,13 +5,11 @@ extern crate derive_more;
 #[macro_use]
 extern crate derive_deref;
 
-use shkeleton::*;
 use shkeleton::byteorder::ReadBytesExt;
+use shkeleton::*;
 
 lazy_static! {
-    static ref TEST: u64 = {
-        10
-    };
+    static ref TEST: u64 = { 10 };
 }
 
 #[derive(From, Deref)]

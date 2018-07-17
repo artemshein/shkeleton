@@ -11,6 +11,7 @@
 //! * regex - regular expressions
 //! * url - handling URLs
 //! * derive_more & derive_deref - more derive implementations
+//! * failure - error handling
 //!
 //! ## Features
 //! Shkeleton also defines a few features which extend the dependencies list and APIs.
@@ -19,7 +20,6 @@
 //! Additional dependencies:
 //! * clap - define your command line arguments parser
 //! * fern - complex logger implementation
-//! * [deprecated] simple_logger - simple logger implementation
 //! * glob - dealing with glob patterns
 //!
 //! ### Concurrency feature
@@ -45,16 +45,19 @@
 //!
 mod shkeleton;
 
+#[allow(useless_attribute)]
 #[allow(unused_imports)]
 #[macro_use]
 pub extern crate log;
 pub extern crate byteorder;
+#[allow(useless_attribute)]
 #[allow(unused_imports)]
 #[macro_use]
 pub extern crate itertools;
 pub extern crate array_tool;
 pub extern crate regex;
 pub extern crate url;
+#[allow(useless_attribute)]
 #[allow(unused_imports)]
 #[macro_use]
 pub extern crate lazy_static;
@@ -62,6 +65,8 @@ pub extern crate lazy_static;
 pub extern crate derive_more;
 #[macro_use]
 pub extern crate derive_deref;
+#[macro_use]
+pub extern crate failure;
 
 #[cfg(feature = "cli")]
 pub extern crate clap;
@@ -71,15 +76,15 @@ pub extern crate fern;
 pub extern crate glob;
 
 #[cfg(feature = "concurrency")]
-pub extern crate scoped_pool;
-#[cfg(feature = "concurrency")]
 pub extern crate num_cpus;
 #[cfg(feature = "concurrency")]
 pub extern crate parking_lot;
+#[cfg(feature = "concurrency")]
+pub extern crate scoped_pool;
 
 pub use shkeleton::sync;
 
-pub use log::*;
-pub use derive_more::*;
 pub use derive_deref::*;
+pub use derive_more::*;
 pub use lazy_static::*;
+pub use log::*;
