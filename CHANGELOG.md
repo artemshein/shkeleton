@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.3.0
+
+* Updated crates export
+
 ## 0.2.1
 
 * Added failure crate

@@ -43,48 +43,54 @@
 //! extern crate derive_deref;
 //! ```
 //!
+
+macro_rules! reexport_crate {
+    ($crate_name:ident) => {
+        #[cfg_attr(feature = "cargo-clippy", allow(useless_attribute))]
+        #[macro_use]
+        #[allow(unused_imports)]
+        pub extern crate $crate_name;
+        #[doc(hidden)]
+        pub use self::$crate_name::*;
+    }
+}
+
+
+
 mod shkeleton;
 
-#[allow(useless_attribute)]
-#[allow(unused_imports)]
-#[macro_use]
-pub extern crate log;
+reexport_crate!(lazy_static);
+reexport_crate!(log);
+reexport_crate!(failure);
+#[doc(hidden)]
 pub extern crate byteorder;
-#[allow(useless_attribute)]
-#[allow(unused_imports)]
-#[macro_use]
+#[doc(hidden)]
 pub extern crate itertools;
+#[doc(hidden)]
 pub extern crate array_tool;
+#[doc(hidden)]
 pub extern crate regex;
+#[doc(hidden)]
 pub extern crate url;
-#[allow(useless_attribute)]
-#[allow(unused_imports)]
-#[macro_use]
-pub extern crate lazy_static;
-#[macro_use]
-pub extern crate derive_more;
-#[macro_use]
-pub extern crate derive_deref;
-#[macro_use]
-pub extern crate failure;
 
 #[cfg(feature = "cli")]
+#[doc(hidden)]
 pub extern crate clap;
 #[cfg(feature = "cli")]
+#[doc(hidden)]
 pub extern crate fern;
 #[cfg(feature = "cli")]
+#[doc(hidden)]
 pub extern crate glob;
 
 #[cfg(feature = "concurrency")]
+#[doc(hidden)]
 pub extern crate num_cpus;
 #[cfg(feature = "concurrency")]
+#[doc(hidden)]
 pub extern crate parking_lot;
 #[cfg(feature = "concurrency")]
+#[doc(hidden)]
 pub extern crate scoped_pool;
 
 pub use shkeleton::sync;
-
-pub use derive_deref::*;
-pub use derive_more::*;
-pub use lazy_static::*;
-pub use log::*;
