@@ -1,7 +1,7 @@
 [package]
 name = "shkeleton"
-version = "0.3.0"
-authors = ["Artem Shein <sc-github@aisys.ru>"]
+version = "0.3.1"
+authors = ["Artem Shein <artem.shein@aisys.ru>"]
 
 description = "Skeleton rust project"
 repository = "https://github.com/artemshein/shkeleton"

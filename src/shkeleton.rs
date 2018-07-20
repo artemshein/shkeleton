@@ -18,6 +18,12 @@ pub mod sync {
         }
 
         #[cfg(feature = "concurrency")]
+        pub fn into_inner(self) -> T { self.0.into_inner() }
+
+        #[cfg(not(feature = "concurrency"))]
+        pub fn into_inner(self) -> T { self.0.into_inner().ok().unwrap() }
+
+        #[cfg(feature = "concurrency")]
         pub fn read(&self) -> RwLockReadGuard<T> {
             self.0.read()
         }

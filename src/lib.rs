@@ -55,8 +55,6 @@ macro_rules! reexport_crate {
     }
 }
 
-
-
 mod shkeleton;
 
 reexport_crate!(lazy_static);
