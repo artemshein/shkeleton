@@ -18,6 +18,7 @@ struct A(pub u32);
 #[cfg(test)]
 #[test]
 fn test_compile() {
+    let _chrono = chrono::Utc::now(); // chrono
     let _num_cpus = num_cpus::get(); // num_cpus
     let _mo = glob::MatchOptions::new(); // glob
     let _rw = sync::RwLock::new(10);

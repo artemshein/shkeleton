@@ -12,6 +12,7 @@
 //! * url - handling URLs
 //! * derive_more & derive_deref - more derive implementations
 //! * failure - error handling
+//! * chrono - dealing with time and date
 //!
 //! ## Features
 //! Shkeleton also defines a few features which extend the dependencies list and APIs.
@@ -70,6 +71,8 @@ pub extern crate array_tool;
 pub extern crate regex;
 #[doc(hidden)]
 pub extern crate url;
+#[doc(hidden)]
+pub extern crate chrono;
 
 #[cfg(feature = "cli")]
 #[doc(hidden)]

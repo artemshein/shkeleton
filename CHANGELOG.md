@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.3.2
+
+* Added chrono crate
+
 ## 0.3.1
 
 * Added missing RwLock method
