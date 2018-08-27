@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.3.3
+
+* Switched to std RwLock in debug mode
+
 ## 0.3.2
 
 * Added chrono crate
