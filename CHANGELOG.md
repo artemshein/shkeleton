@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.4.0
+
+* Switched to sherr crate
+
 ## 0.3.3
 
 * Switched to std RwLock in debug mode

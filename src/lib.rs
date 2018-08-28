@@ -11,7 +11,6 @@
 //! * regex - regular expressions
 //! * url - handling URLs
 //! * derive_more & derive_deref - more derive implementations
-//! * failure - error handling
 //! * chrono - dealing with time and date
 //!
 //! ## Features
@@ -20,7 +19,7 @@
 //! ### CLI feature
 //! Additional dependencies:
 //! * clap - define your command line arguments parser
-//! * fern - complex logger implementation
+//! * sherr - error handling and logger helpers
 //! * glob - dealing with glob patterns
 //!
 //! ### Concurrency feature
@@ -30,8 +29,8 @@
 //! * parking_lot - faster syncronization primitives
 //! Concurrency feature also defines a facade for RwLock, which allowes to hide an implementation
 //! (std::sync::RwLock or parking_lot::RwLock) behind this facade and switch implementation without
-//! the need to update sources. It could be valuable because the parking_lot implementation
-//! lacks "lock poisoning" and maybe harder to debug deadlocks.
+//! need to update sources. It could be valuable because the parking_lot implementation
+//! lacks "lock poisoning" and may be harder to debug deadlocks.
 //!
 //! ### Limitations
 //! Due to current Rust macro system limitations in order to use derive macros from the derive_deref
@@ -59,8 +58,6 @@ macro_rules! reexport_crate {
 mod shkeleton;
 
 reexport_crate!(lazy_static);
-reexport_crate!(log);
-reexport_crate!(failure);
 #[doc(hidden)]
 pub extern crate byteorder;
 #[doc(hidden)]
@@ -73,13 +70,13 @@ pub extern crate regex;
 pub extern crate url;
 #[doc(hidden)]
 pub extern crate chrono;
+#[doc(hidden)]
+#[macro_use]
+pub extern crate sherr;
 
 #[cfg(feature = "cli")]
 #[doc(hidden)]
 pub extern crate clap;
-#[cfg(feature = "cli")]
-#[doc(hidden)]
-pub extern crate fern;
 #[cfg(feature = "cli")]
 #[doc(hidden)]
 pub extern crate glob;
@@ -95,3 +92,4 @@ pub extern crate parking_lot;
 pub extern crate scoped_pool;
 
 pub use shkeleton::sync;
+pub use sherr::*;

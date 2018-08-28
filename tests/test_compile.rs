@@ -29,3 +29,10 @@ fn test_compile() {
     let _be = cur.read_u64::<byteorder::BigEndian>().unwrap();
     let _log_level = fern::Dispatch::new(); // fern
 }
+
+#[cfg(test)]
+#[test]
+#[should_panic]
+fn test_diag() {
+    diag_unreachable!()
+}

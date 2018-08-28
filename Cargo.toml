@@ -1,6 +1,6 @@
 [package]
 name = "shkeleton"
-version = "0.3.3"
+version = "0.4.0"
 authors = ["Artem Shein <artem.shein@aisys.ru>"]
 
 description = "Skeleton rust project"
@@ -9,7 +9,7 @@ categories = ["development-tools"]
 license = "MIT"
 
 [dependencies]
-log = "0.4"
+sherr = "0.1"
 byteorder = "1"
 lazy_static = "1"
 array_tool = "1"
@@ -18,9 +18,7 @@ regex = "1"
 url = "1"
 derive_more = "0.11"
 derive_deref = "1"
-failure = "0.1"
 chrono = "0.4"
-fern = { version = "0.5", features = ["colored"], optional = true }
 clap = { version = "2", optional = true }
 scoped-pool = { version = "1", optional = true }
 num_cpus = { version = "1", optional = true }
@@ -29,7 +27,7 @@ glob = { version = "0.2", optional = true }
 
 [features]
 default = []
-cli = ["clap", "fern", "glob"]
+cli = ["clap", "glob", "sherr/impl"]
 concurrency = ["scoped-pool", "num_cpus", "parking_lot"]
 
 [[test]]
