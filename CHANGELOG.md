@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.4.1
+
+* Added failure feature
+
 ## 0.4.0
 
 * Switched to sherr crate

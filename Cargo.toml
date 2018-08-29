@@ -1,6 +1,6 @@
 [package]
 name = "shkeleton"
-version = "0.4.0"
+version = "0.4.1"
 authors = ["Artem Shein <artem.shein@aisys.ru>"]
 
 description = "Skeleton rust project"
@@ -9,7 +9,7 @@ categories = ["development-tools"]
 license = "MIT"
 
 [dependencies]
-sherr = "0.1"
+sherr = "0.2"
 byteorder = "1"
 lazy_static = "1"
 array_tool = "1"
@@ -29,7 +29,4 @@ glob = { version = "0.2", optional = true }
 default = []
 cli = ["clap", "glob", "sherr/impl"]
 concurrency = ["scoped-pool", "num_cpus", "parking_lot"]
-
-[[test]]
-name = "test_compile"
-required-features = ["cli", "concurrency"]
+failure = ["sherr/fail"]

@@ -32,6 +32,9 @@
 //! need to update sources. It could be valuable because the parking_lot implementation
 //! lacks "lock poisoning" and may be harder to debug deadlocks.
 //!
+//! ### Failure feature
+//! Enables `fail` feature of the `sherr` dependency and reexports `sherr::failure`.
+//!
 //! ### Limitations
 //! Due to current Rust macro system limitations in order to use derive macros from the derive_deref
 //! or derive_more crates you need to import them manually:
@@ -93,3 +96,5 @@ pub extern crate scoped_pool;
 
 pub use shkeleton::sync;
 pub use sherr::*;
+#[cfg(feature = "failure")]
+pub use sherr::failure_derive::*;
