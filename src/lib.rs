@@ -73,8 +73,9 @@ pub extern crate regex;
 pub extern crate url;
 #[doc(hidden)]
 pub extern crate chrono;
-#[doc(hidden)]
+#[cfg_attr(feature = "cargo-clippy", allow(useless_attribute))]
 #[macro_use]
+#[allow(unused_imports)]
 pub extern crate sherr;
 
 #[cfg(feature = "cli")]
