@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.4.2
+
+* Updated derive_more
+
 ## 0.4.1
 
 * Added failure feature
