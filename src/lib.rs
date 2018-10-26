@@ -43,10 +43,13 @@ pub extern crate array_tool;
 pub extern crate byteorder;
 #[doc(hidden)]
 pub extern crate chrono;
+#[doc(hidden)]
 pub extern crate derive_deref;
+#[doc(hidden)]
 pub extern crate derive_more;
 #[doc(hidden)]
 pub extern crate itertools;
+#[doc(hidden)]
 pub extern crate lazy_static;
 #[doc(hidden)]
 pub extern crate regex;
