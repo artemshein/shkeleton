@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.5.0
+
+* Switch to new `use macro` syntax
+* Update derive_more
+
 ## 0.4.2
 
 * Updated derive_more

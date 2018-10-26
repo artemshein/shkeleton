@@ -1,6 +1,6 @@
 [package]
 name = "shkeleton"
-version = "0.4.2"
+version = "0.5.0"
 authors = ["Artem Shein <artem.shein@aisys.ru>"]
 
 description = "Skeleton rust project"
@@ -16,7 +16,7 @@ array_tool = "1"
 itertools = "0.7"
 regex = "1"
 url = "1"
-derive_more = "0.12"
+derive_more = "0.13"
 derive_deref = "1"
 chrono = "0.4"
 clap = { version = "2", optional = true }

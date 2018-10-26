@@ -1,12 +1,15 @@
-#[macro_use]
 extern crate shkeleton;
-#[macro_use]
-extern crate derive_more;
-#[macro_use]
-extern crate derive_deref;
 
-use shkeleton::byteorder::ReadBytesExt;
-use shkeleton::*;
+use shkeleton::{
+    byteorder::ReadBytesExt, derive_deref::Deref, derive_more::From, lazy_static::lazy_static,
+    log::info, sync, sherr::{diag_unreachable, diag, error, diag_position, diag_backtrace}
+};
+
+#[cfg(all(test, feature = "cli"))]
+use shkeleton::{fern, glob};
+
+#[cfg(all(test, feature = "failure"))]
+use shkeleton::failure;
 
 lazy_static! {
     static ref TEST: u64 = { 10 };

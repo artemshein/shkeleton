@@ -34,49 +34,27 @@
 //!
 //! ### Failure feature
 //! Enables `fail` feature of the `sherr` dependency and reexports `sherr::failure`.
-//!
-//! ### Limitations
-//! Due to current Rust macro system limitations in order to use derive macros from the derive_deref
-//! or derive_more crates you need to import them manually:
-//!
-//! ```ignore
-//! #[macro_use]
-//! extern crate derive_more;
-//! #[macro_use]
-//! extern crate derive_deref;
-//! ```
-//!
-
-macro_rules! reexport_crate {
-    ($crate_name:ident) => {
-        #[cfg_attr(feature = "cargo-clippy", allow(useless_attribute))]
-        #[macro_use]
-        #[allow(unused_imports)]
-        pub extern crate $crate_name;
-        #[doc(hidden)]
-        pub use self::$crate_name::*;
-    }
-}
 
 mod shkeleton;
 
-reexport_crate!(lazy_static);
-#[doc(hidden)]
-pub extern crate byteorder;
-#[doc(hidden)]
-pub extern crate itertools;
 #[doc(hidden)]
 pub extern crate array_tool;
 #[doc(hidden)]
-pub extern crate regex;
-#[doc(hidden)]
-pub extern crate url;
+pub extern crate byteorder;
 #[doc(hidden)]
 pub extern crate chrono;
+pub extern crate derive_deref;
+pub extern crate derive_more;
+#[doc(hidden)]
+pub extern crate itertools;
+pub extern crate lazy_static;
+#[doc(hidden)]
+pub extern crate regex;
 #[cfg_attr(feature = "cargo-clippy", allow(useless_attribute))]
-#[macro_use]
 #[allow(unused_imports)]
 pub extern crate sherr;
+#[doc(hidden)]
+pub extern crate url;
 
 #[cfg(feature = "cli")]
 #[doc(hidden)]
@@ -95,7 +73,7 @@ pub extern crate parking_lot;
 #[doc(hidden)]
 pub extern crate scoped_pool;
 
-pub use shkeleton::sync;
-pub use sherr::*;
 #[cfg(feature = "failure")]
 pub use sherr::failure_derive::*;
+pub use sherr::*;
+pub use shkeleton::sync;

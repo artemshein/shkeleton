@@ -18,7 +18,9 @@ pub mod sync {
             RwLock(RwLockImpl::new(v))
         }
 
-        pub fn into_inner(self) -> T { self.0.into_inner() }
+        pub fn into_inner(self) -> T {
+            self.0.into_inner()
+        }
 
         pub fn read(&self) -> RwLockReadGuard<T> {
             self.0.read()
@@ -43,7 +45,9 @@ pub mod sync {
             RwLock(RwLockImpl::new(v))
         }
 
-        pub fn into_inner(self) -> T { self.0.into_inner().ok().unwrap() }
+        pub fn into_inner(self) -> T {
+            self.0.into_inner().ok().unwrap()
+        }
 
         pub fn read(&self) -> RwLockReadGuard<T> {
             self.0.read().unwrap()
