@@ -1,7 +1,8 @@
 [package]
 name = "shkeleton"
-version = "0.5.0"
+version = "0.6.0"
 authors = ["Artem Shein <artem.shein@aisys.ru>"]
+edition = "2018"
 
 description = "Skeleton rust project"
 repository = "https://github.com/artemshein/shkeleton"
@@ -13,16 +14,16 @@ sherr = "0.2"
 byteorder = "1"
 lazy_static = "1"
 array_tool = "1"
-itertools = "0.7"
+itertools = "0.8"
 regex = "1"
 url = "1"
-derive_more = "0.13"
+derive_more = "0.14"
 derive_deref = "1"
 chrono = "0.4"
 clap = { version = "2", optional = true }
 scoped-pool = { version = "1", optional = true }
 num_cpus = { version = "1", optional = true }
-parking_lot = { version = "0.6", optional = true }
+parking_lot = { version = "0.7", optional = true }
 glob = { version = "0.2", optional = true }
 
 [features]

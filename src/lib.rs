@@ -26,57 +26,51 @@
 //! Additional dependencies:
 //! * scoped-pool - define and use a thread pool
 //! * num_cpus - get the number of CPUs and cores available
-//! * parking_lot - faster syncronization primitives
-//! Concurrency feature also defines a facade for RwLock, which allowes to hide an implementation
+//! * parking_lot - faster synchronization primitives
+//! Concurrency feature also defines a facade for RwLock, which allows to hide an implementation
 //! (std::sync::RwLock or parking_lot::RwLock) behind this facade and switch implementation without
 //! need to update sources. It could be valuable because the parking_lot implementation
 //! lacks "lock poisoning" and may be harder to debug deadlocks.
 //!
 //! ### Failure feature
-//! Enables `fail` feature of the `sherr` dependency and reexports `sherr::failure`.
+//! Enables `fail` feature of the `sherr` dependency.
 
-mod shkeleton;
+pub mod sync;
 
 #[doc(hidden)]
-pub extern crate array_tool;
+pub use array_tool;
 #[doc(hidden)]
-pub extern crate byteorder;
+pub use byteorder;
 #[doc(hidden)]
-pub extern crate chrono;
+pub use chrono;
 #[doc(hidden)]
-pub extern crate derive_deref;
+pub use derive_deref;
 #[doc(hidden)]
-pub extern crate derive_more;
+pub use derive_more;
 #[doc(hidden)]
-pub extern crate itertools;
+pub use itertools;
 #[doc(hidden)]
-pub extern crate lazy_static;
+pub use lazy_static;
 #[doc(hidden)]
-pub extern crate regex;
-#[cfg_attr(feature = "cargo-clippy", allow(useless_attribute))]
-#[allow(unused_imports)]
-pub extern crate sherr;
+pub use regex;
 #[doc(hidden)]
-pub extern crate url;
+pub use sherr;
+#[doc(hidden)]
+pub use url;
 
 #[cfg(feature = "cli")]
 #[doc(hidden)]
-pub extern crate clap;
+pub use clap;
 #[cfg(feature = "cli")]
 #[doc(hidden)]
-pub extern crate glob;
+pub use glob;
 
 #[cfg(feature = "concurrency")]
 #[doc(hidden)]
-pub extern crate num_cpus;
+pub use num_cpus;
 #[cfg(feature = "concurrency")]
 #[doc(hidden)]
-pub extern crate parking_lot;
+pub use parking_lot;
 #[cfg(feature = "concurrency")]
 #[doc(hidden)]
-pub extern crate scoped_pool;
-
-#[cfg(feature = "failure")]
-pub use sherr::failure_derive::*;
-pub use sherr::*;
-pub use shkeleton::sync;
+pub use scoped_pool;

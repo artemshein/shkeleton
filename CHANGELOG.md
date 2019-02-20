@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 0.6.0
+
+* Update derive_more
+* Update itertools
+* Update parking_lot
+* Switch to 2018 edition
+
 ## 0.5.0
 
 * Switch to new `use macro` syntax
