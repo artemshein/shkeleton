@@ -10,7 +10,7 @@ use shkeleton::{
 };
 
 #[cfg(all(test, feature = "cli"))]
-use shkeleton::{glob, sherr::fern};
+use shkeleton::{glob, sherr::fern, dirs};
 
 #[cfg(all(test, feature = "failure"))]
 use shkeleton::sherr::failure;
@@ -22,27 +22,27 @@ lazy_static! {
 #[derive(From, Deref)]
 struct A(pub u32);
 
-#[cfg(all(test, feature = "cli"))]
+#[cfg(feature = "cli")]
 #[test]
 fn test_cli_feature() {
     let _ = clap::App::new("test");
     let _mo = glob::MatchOptions::new(); // glob
     let _log_level = fern::Dispatch::new(); // fern
+    let _home = dirs::home_dir();
 }
 
-#[cfg(all(test, feature = "concurrency"))]
+#[cfg(feature = "concurrency")]
 #[test]
 fn test_concurrency_feature() {
     let _num_cpus = num_cpus::get(); // num_cpus
 }
 
-#[cfg(all(test, feature = "failure"))]
+#[cfg(feature = "failure")]
 #[test]
 fn test_failure_feature() {
     let _ = failure::Error::from(sherr::DiagError::unimplemented(diag_position!()));
 }
 
-#[cfg(test)]
 #[test]
 fn test_compile() {
     let _chrono = chrono::Utc::now(); // chrono
@@ -54,7 +54,6 @@ fn test_compile() {
     let _be = cur.read_u64::<byteorder::BigEndian>().unwrap();
 }
 
-#[cfg(test)]
 #[test]
 #[should_panic]
 fn test_diag() {

@@ -21,6 +21,7 @@
 //! * clap - define your command line arguments parser
 //! * sherr - error handling and logger helpers
 //! * glob - dealing with glob patterns
+//! * dirs - dealing with system paths
 //!
 //! ### Concurrency feature
 //! Additional dependencies:
@@ -64,6 +65,9 @@ pub use clap;
 #[cfg(feature = "cli")]
 #[doc(hidden)]
 pub use glob;
+#[cfg(feature = "cli")]
+#[doc(hidden)]
+pub use dirs;
 
 #[cfg(feature = "concurrency")]
 #[doc(hidden)]

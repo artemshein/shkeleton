@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 0.6.2
+
+* Add dirs
+
+## 0.6.1
+
+* Switch to Rust 2018 edition
+* Update dependencies
+
 ## 0.6.0
 
 * Update derive_more
