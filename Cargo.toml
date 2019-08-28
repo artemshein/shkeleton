@@ -1,6 +1,6 @@
 [package]
 name = "shkeleton"
-version = "0.6.2"
+version = "0.7.0"
 authors = ["Artem Shein <artem.shein@aisys.ru>"]
 edition = "2018"
 
@@ -10,25 +10,26 @@ categories = ["development-tools"]
 license = "MIT"
 
 [dependencies]
-sherr = "0.2.8"
+snafu = "0.5.0"
 byteorder = "1.3.1"
 lazy_static = "1.3"
 array_tool = "1"
 itertools = "0.8"
 regex = "1.1.2"
-url = "1.7"
-derive_more = "0.14"
+url = "2.1.0"
+derive_more = "0.15.0"
 derive_deref = "1.0.2"
 chrono = "0.4.6"
-dirs = "1.0.5"
+dirs = "2.0.2"
+log = "0.4"
+fern = { version = "0.5", features = ["colored"], optional = true }
 clap = { version = "2.32", optional = true }
 scoped-pool = { version = "1", optional = true }
 num_cpus = { version = "1.10", optional = true }
-parking_lot = { version = "0.7.1", optional = true }
+parking_lot = { version = "0.9.0", optional = true }
 glob = { version = "0.3", optional = true }
 
 [features]
 default = []
-cli = ["clap", "glob", "sherr/impl"]
+cli = ["clap", "glob", "fern"]
 concurrency = ["scoped-pool", "num_cpus", "parking_lot"]
-failure = ["sherr/fail"]

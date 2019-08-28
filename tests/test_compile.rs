@@ -5,18 +5,22 @@ use shkeleton::{
     derive_deref::Deref,
     derive_more::From,
     lazy_static::lazy_static,
-    sherr::{diag, diag_backtrace, diag_position, diag_unreachable, error, log::info},
+    snafu::Snafu,
     sync,
+    log::info,
 };
 
 #[cfg(all(test, feature = "cli"))]
-use shkeleton::{glob, sherr::fern, dirs};
-
-#[cfg(all(test, feature = "failure"))]
-use shkeleton::sherr::failure;
+use shkeleton::{glob, fern, dirs};
 
 lazy_static! {
     static ref TEST: u64 = { 10 };
+}
+
+#[derive(Snafu, Debug)]
+enum Error {
+    #[snafu(display("Some error happened: {}", msg))]
+    SomeError { msg: String }
 }
 
 #[derive(From, Deref)]
@@ -37,12 +41,6 @@ fn test_concurrency_feature() {
     let _num_cpus = num_cpus::get(); // num_cpus
 }
 
-#[cfg(feature = "failure")]
-#[test]
-fn test_failure_feature() {
-    let _ = failure::Error::from(sherr::DiagError::unimplemented(diag_position!()));
-}
-
 #[test]
 fn test_compile() {
     let _chrono = chrono::Utc::now(); // chrono
@@ -52,11 +50,5 @@ fn test_compile() {
     url::Url::parse("http://abc.ru").unwrap();
     let mut cur = std::io::Cursor::new(vec![0u8; 8]);
     let _be = cur.read_u64::<byteorder::BigEndian>().unwrap();
-}
-
-#[test]
-#[should_panic]
-fn test_diag() {
-    let _ = TEST;
-    diag_unreachable!()
+    let _err = Error::SomeError { msg: format!("message") };
 }

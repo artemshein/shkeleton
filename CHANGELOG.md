@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.7.0
+
+* Remove sherr
+* Add log, fern, snafu and sherr
+* Update dependencies
+
 ## 0.6.2
 
 * Add dirs
