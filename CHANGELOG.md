@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.8.0
+
+* Revert changes of 0.7.0
+* Update dependencies
+
 ## 0.7.0
 
 * Remove sherr

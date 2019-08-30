@@ -12,8 +12,6 @@
 //! * url - handling URLs
 //! * derive_more & derive_deref - more derive implementations
 //! * chrono - dealing with time and date
-//! * log - logging API
-//! * snafu - handling errors
 //!
 //! ## Features
 //! Shkeleton also defines a few features which extend the dependencies list and APIs.
@@ -21,9 +19,9 @@
 //! ### CLI feature
 //! Additional dependencies:
 //! * clap - define your command line arguments parser
+//! * sherr - error handling and logger helpers
 //! * glob - dealing with glob patterns
 //! * dirs - dealing with system paths
-//! * fern - logging implementation
 //!
 //! ### Concurrency feature
 //! Additional dependencies:
@@ -35,6 +33,8 @@
 //! need to update sources. It could be valuable because the parking_lot implementation
 //! lacks "lock poisoning" and may be harder to debug deadlocks.
 //!
+//! ### Failure feature
+//! Enables `fail` feature of the `sherr` dependency.
 
 pub mod sync;
 
@@ -55,11 +55,9 @@ pub use lazy_static;
 #[doc(hidden)]
 pub use regex;
 #[doc(hidden)]
-pub use snafu;
+pub use sherr;
 #[doc(hidden)]
 pub use url;
-#[doc(hidden)]
-pub use log;
 
 #[cfg(feature = "cli")]
 #[doc(hidden)]
@@ -70,9 +68,6 @@ pub use glob;
 #[cfg(feature = "cli")]
 #[doc(hidden)]
 pub use dirs;
-#[cfg(feature = "cli")]
-#[doc(hidden)]
-pub use fern;
 
 #[cfg(feature = "concurrency")]
 #[doc(hidden)]
