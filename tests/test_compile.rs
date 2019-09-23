@@ -50,6 +50,7 @@ fn test_compile() {
     info!("Message {}", *TEST);
     let _regex = regex::Regex::new("[abc]+").unwrap();
     url::Url::parse("http://abc.ru").unwrap();
+    let _ = percent_encoding::utf8_percent_encode("abc", percent_encoding::NON_ALPHANUMERIC);
     let mut cur = std::io::Cursor::new(vec![0u8; 8]);
     let _be = cur.read_u64::<byteorder::BigEndian>().unwrap();
 }

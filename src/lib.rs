@@ -10,6 +10,7 @@
 //! * itertools - utilities for dealing with iterators
 //! * regex - regular expressions
 //! * url - handling URLs
+//! * percent_encoding - URL encoding
 //! * derive_more & derive_deref - more derive implementations
 //! * chrono - dealing with time and date
 //!
@@ -58,6 +59,8 @@ pub use regex;
 pub use sherr;
 #[doc(hidden)]
 pub use url;
+#[doc(hidden)]
+pub use percent_encoding;
 
 #[cfg(feature = "cli")]
 #[doc(hidden)]

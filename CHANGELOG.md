@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.8.1
+
+* Add percent-encoding
+* Update dependencies
+
 ## 0.8.0
 
 * Revert changes of 0.7.0
