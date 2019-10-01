@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.8.2
+
+* Add fstrings
+
 ## 0.8.1
 
 * Add percent-encoding

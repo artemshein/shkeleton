@@ -13,6 +13,7 @@
 //! * percent_encoding - URL encoding
 //! * derive_more & derive_deref - more derive implementations
 //! * chrono - dealing with time and date
+//! * fstrings - string interpolation macros
 //!
 //! ## Features
 //! Shkeleton also defines a few features which extend the dependencies list and APIs.
@@ -61,6 +62,8 @@ pub use sherr;
 pub use url;
 #[doc(hidden)]
 pub use percent_encoding;
+#[doc(hidden)]
+pub use fstrings;
 
 #[cfg(feature = "cli")]
 #[doc(hidden)]

@@ -7,6 +7,7 @@ use shkeleton::{
     lazy_static::lazy_static,
     sherr::{diag, diag_backtrace, diag_position, diag_unreachable, error, log::info},
     sync,
+    fstrings::*
 };
 
 #[cfg(all(test, feature = "cli"))]
@@ -53,6 +54,8 @@ fn test_compile() {
     let _ = percent_encoding::utf8_percent_encode("abc", percent_encoding::NON_ALPHANUMERIC);
     let mut cur = std::io::Cursor::new(vec![0u8; 8]);
     let _be = cur.read_u64::<byteorder::BigEndian>().unwrap();
+    let name = "SomeName";
+    format_f!("My name is {name}");
 }
 
 #[test]
