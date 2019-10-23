@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.8.3
+
+* Add sync::AtomicPtrHolder
+
 ## 0.8.2
 
 * Add fstrings

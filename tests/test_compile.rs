@@ -55,6 +55,7 @@ fn test_compile() {
     let mut cur = std::io::Cursor::new(vec![0u8; 8]);
     let _be = cur.read_u64::<byteorder::BigEndian>().unwrap();
     let name = "SomeName";
+    let _ = sync::AtomicPtrHolder::<usize>::empty();
     format_f!("My name is {name}");
 }
 
