@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.8.4
+
+* Add AtomicHolderPtr is_null
+* Update dependencies
+
 ## 0.8.3
 
 * Add sync::AtomicPtrHolder

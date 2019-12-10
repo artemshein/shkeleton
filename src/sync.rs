@@ -104,6 +104,10 @@ impl<T> AtomicPtrHolder<T> {
             Mutex::new(()),
         )
     }
+
+    pub fn is_null(&self) -> bool {
+        self.0.load(Ordering::Acquire).is_null()
+    }
 }
 
 impl<T> From<Box<T>> for AtomicPtrHolder<T> {
