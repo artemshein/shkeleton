@@ -67,6 +67,10 @@ impl<T> RwLock<T> {
     }
 }
 
+#[deprecated(
+    since = "0.8.5",
+    note = "Please use parking_lot::Mutex instead",
+)]
 pub trait AtomicHolder<T> {
     fn take(&self) -> Box<T>;
 
@@ -94,6 +98,10 @@ pub trait AtomicHolder<T> {
     }
 }
 
+#[deprecated(
+    since = "0.8.5",
+    note = "Please use parking_lot::Mutex instead",
+)]
 pub struct AtomicPtrHolder<T>(AtomicPtr<T>, Condvar, Mutex<()>);
 
 impl<T> AtomicPtrHolder<T> {

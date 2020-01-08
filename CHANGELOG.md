@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.8.5
+
+* Deprecate AtomicHolderPtr in favor of parking_lot::Mutex
+
 ## 0.8.4
 
 * Add AtomicHolderPtr is_null

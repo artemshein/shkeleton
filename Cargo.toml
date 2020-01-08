@@ -1,6 +1,6 @@
 [package]
 name = "shkeleton"
-version = "0.8.4"
+version = "0.8.5"
 authors = ["Artem Shein <artem.shein@aisys.ru>"]
 edition = "2018"
 
