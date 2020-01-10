@@ -1,6 +1,6 @@
 [package]
 name = "shkeleton"
-version = "0.8.5"
+version = "0.8.6"
 authors = ["Artem Shein <artem.shein@aisys.ru>"]
 edition = "2018"
 
@@ -33,4 +33,5 @@ glob = { version = "0.3", optional = true }
 default = []
 cli = ["clap", "glob", "sherr/impl"]
 concurrency = ["scoped-pool", "num_cpus", "parking_lot"]
+deadlock_detection = ["parking_lot/deadlock_detection"]
 failure = ["sherr/fail"]

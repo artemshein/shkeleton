@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.8.6
+
+* Add deadlock_detection feature
+
 ## 0.8.5
 
 * Deprecate AtomicHolderPtr in favor of parking_lot::Mutex

@@ -18,14 +18,14 @@
 //! ## Features
 //! Shkeleton also defines a few features which extend the dependencies list and APIs.
 //!
-//! ### CLI feature
+//! ### cli
 //! Additional dependencies:
 //! * clap - define your command line arguments parser
 //! * sherr - error handling and logger helpers
 //! * glob - dealing with glob patterns
 //! * dirs - dealing with system paths
 //!
-//! ### Concurrency feature
+//! ### concurrency
 //! Additional dependencies:
 //! * scoped-pool - define and use a thread pool
 //! * num_cpus - get the number of CPUs and cores available
@@ -35,7 +35,10 @@
 //! need to update sources. It could be valuable because the parking_lot implementation
 //! lacks "lock poisoning" and may be harder to debug deadlocks.
 //!
-//! ### Failure feature
+//! ### deadlock_detection
+//! Enables parking_lot deadlock_detection feature.
+//!
+//! ### failure
 //! Enables `fail` feature of the `sherr` dependency.
 
 pub mod sync;
