@@ -1,6 +1,6 @@
 [package]
 name = "shkeleton"
-version = "0.9.0"
+version = "0.9.1"
 authors = ["Artem Shein <artem.shein@aisys.ru>"]
 edition = "2018"
 
@@ -23,6 +23,7 @@ derive_deref = "1.0.2"
 chrono = "0.4.10"
 dirs = "2.0.2"
 fstrings = "0.2.2"
+fehler = "1.0.0"
 clap = { version = "2.32", optional = true }
 scoped-pool = { version = "1", optional = true }
 num_cpus = { version = "1.10", optional = true }

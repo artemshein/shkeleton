@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.9.1
+
+* Add fehler dependency
+
 ## 0.9.0
 
 * Update sherr to 0.3

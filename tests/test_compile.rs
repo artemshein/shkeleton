@@ -5,9 +5,10 @@ use shkeleton::{
     derive_deref::Deref,
     derive_more::From,
     lazy_static::lazy_static,
-    sherr::{diag, diag_backtrace, diag_position, diag_unreachable, error, log::info},
+    sherr::{diag, diag_backtrace, diag_position, diag_unreachable, error, log::info, anyhow::*},
     sync,
-    fstrings::*
+    fstrings::*,
+    fehler::*,
 };
 
 #[cfg(all(test, feature = "cli"))]
@@ -42,6 +43,14 @@ fn test_failure_feature() {
     let _ = anyhow::anyhow!("some error at {}", diag_position!());
 }
 
+#[throws]
+fn may_throw() -> u8 {
+    if false {
+        throw!(anyhow!("error"))
+    }
+    10
+}
+
 #[test]
 fn test_compile() {
     let _chrono = chrono::Utc::now(); // chrono
@@ -53,6 +62,7 @@ fn test_compile() {
     let mut cur = std::io::Cursor::new(vec![0u8; 8]);
     let _be = cur.read_u64::<byteorder::BigEndian>().unwrap();
     let name = "SomeName";
+    let _ = may_throw();
     format_f!("My name is {name}");
 }
 
