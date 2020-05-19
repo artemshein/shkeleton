@@ -14,6 +14,10 @@
 //! * derive_more & derive_deref - more derive implementations
 //! * chrono - dealing with time and date
 //! * fstrings - string interpolation macros
+//! * sherr - error signalling and logger helpers
+//! * log - logging API (through sherr)
+//! * anyhow - flexible error signalling (through sherr)
+//! * backtrace - backtrace routines (through sherr)
 //!
 //! ## Features
 //! Shkeleton also defines a few features which extend the dependencies list and APIs.
@@ -21,9 +25,9 @@
 //! ### cli
 //! Additional dependencies:
 //! * clap - define your command line arguments parser
-//! * sherr - error handling and logger helpers
 //! * glob - dealing with glob patterns
 //! * dirs - dealing with system paths
+//! * fern - logging implementation (through sherr)
 //!
 //! ### concurrency
 //! Additional dependencies:
@@ -32,14 +36,10 @@
 //! * parking_lot - faster synchronization primitives
 //! Concurrency feature also defines a facade for RwLock, which allows to hide an implementation
 //! (std::sync::RwLock or parking_lot::RwLock) behind this facade and switch implementation without
-//! need to update sources. It could be valuable because the parking_lot implementation
-//! lacks "lock poisoning" and may be harder to debug deadlocks.
+//! need to update sources.
 //!
 //! ### deadlock_detection
 //! Enables parking_lot deadlock_detection feature.
-//!
-//! ### failure
-//! Enables `fail` feature of the `sherr` dependency.
 
 pub mod sync;
 
