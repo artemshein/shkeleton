@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.9.0
+
+* Update sherr to 0.3
+* Remove AtomicHolder and AtmoicHolderPtr
+* Update itertools to 0.9
+
 ## 0.8.6
 
 * Add deadlock_detection feature
