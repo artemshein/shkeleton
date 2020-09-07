@@ -32,7 +32,7 @@
 //!
 //! ### concurrency
 //! Additional dependencies:
-//! * scoped-pool - define and use a thread pool
+//! * crossbeam - multi-threading utils
 //! * num_cpus - get the number of CPUs and cores available
 //! * parking_lot - faster synchronization primitives
 //! Concurrency feature also defines a facade for RwLock, which allows to hide an implementation
@@ -89,4 +89,4 @@ pub use num_cpus;
 pub use parking_lot;
 #[cfg(feature = "concurrency")]
 #[doc(hidden)]
-pub use scoped_pool;
+pub use crossbeam;

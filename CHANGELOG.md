@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 0.10.0
+
+* Remove scoped-pool
+* Add crossbeam
+* Update parking_lot and dirs 
+
 ## 0.9.1
 
 * Add fehler dependency

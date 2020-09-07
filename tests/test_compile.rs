@@ -17,7 +17,7 @@ use shkeleton::{glob, sherr::fern, dirs};
 use shkeleton::sherr::anyhow;
 
 lazy_static! {
-    static ref TEST: u64 = { 10 };
+    static ref TEST: u64 = 10;
 }
 
 #[derive(From, Deref)]
