@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.11.0
+
+* Updated dependencies
+
 ## 0.10.0
 
 * Remove scoped-pool
