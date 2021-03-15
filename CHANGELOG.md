@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.11.1
+
+* Updated dependencies
+
 ## 0.11.0
 
 * Updated dependencies
