@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.11.3
+
+* Update sherr to 0.4.1
+
 ## 0.11.2
 
 * Update sherr to 0.4
