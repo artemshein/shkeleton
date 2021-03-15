@@ -5,7 +5,7 @@ use shkeleton::{
     derive_deref::Deref,
     derive_more::From,
     lazy_static::lazy_static,
-    sherr::{diag, diag_backtrace, diag_position, diag_unreachable, error, log::info, anyhow::*},
+    sherr::{diag_position, diag_unreachable, error, log::info, anyhow::*},
     sync,
     fstrings::*,
     fehler::*,
