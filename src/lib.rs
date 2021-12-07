@@ -57,36 +57,36 @@ pub use derive_more;
 #[doc(hidden)]
 pub use fehler;
 #[doc(hidden)]
+pub use fstrings;
+#[doc(hidden)]
 pub use itertools;
 #[doc(hidden)]
 pub use lazy_static;
+#[doc(hidden)]
+pub use percent_encoding;
 #[doc(hidden)]
 pub use regex;
 #[doc(hidden)]
 pub use sherr;
 #[doc(hidden)]
 pub use url;
-#[doc(hidden)]
-pub use percent_encoding;
-#[doc(hidden)]
-pub use fstrings;
 
 #[cfg(feature = "cli")]
 #[doc(hidden)]
 pub use clap;
 #[cfg(feature = "cli")]
 #[doc(hidden)]
-pub use glob;
+pub use dirs;
 #[cfg(feature = "cli")]
 #[doc(hidden)]
-pub use dirs;
+pub use glob;
 
+#[cfg(feature = "concurrency")]
+#[doc(hidden)]
+pub use crossbeam;
 #[cfg(feature = "concurrency")]
 #[doc(hidden)]
 pub use num_cpus;
 #[cfg(feature = "concurrency")]
 #[doc(hidden)]
 pub use parking_lot;
-#[cfg(feature = "concurrency")]
-#[doc(hidden)]
-pub use crossbeam;

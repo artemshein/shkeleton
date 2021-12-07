@@ -4,15 +4,15 @@ use shkeleton::{
     byteorder::ReadBytesExt,
     derive_deref::Deref,
     derive_more::From,
-    lazy_static::lazy_static,
-    sherr::{diag_position, diag_unreachable, error, log::info, anyhow::*},
-    sync,
-    fstrings::*,
     fehler::*,
+    fstrings::*,
+    lazy_static::lazy_static,
+    sherr::{anyhow::*, diag_position, diag_unreachable, error, log::info},
+    sync,
 };
 
 #[cfg(all(test, feature = "cli"))]
-use shkeleton::{glob, sherr::fern, dirs};
+use shkeleton::{dirs, glob, sherr::fern};
 
 use shkeleton::sherr::anyhow;
 
