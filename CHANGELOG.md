@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.12.0
+
+* Updated dependencies
+* Removed fehler
+
 ## 0.11.4
 
 * Updated dependencies

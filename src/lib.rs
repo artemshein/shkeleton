@@ -14,7 +14,6 @@
 //! * derive_more & derive_deref - more derive implementations
 //! * chrono - dealing with time and date
 //! * fstrings - string interpolation macros
-//! * fehler - exceptions like approach to errors
 //! * sherr - error signalling and logger helpers
 //! * log - logging API (through sherr)
 //! * anyhow - flexible error signalling (through sherr)
@@ -54,8 +53,6 @@ pub use chrono;
 pub use derive_deref;
 #[doc(hidden)]
 pub use derive_more;
-#[doc(hidden)]
-pub use fehler;
 #[doc(hidden)]
 pub use fstrings;
 #[doc(hidden)]

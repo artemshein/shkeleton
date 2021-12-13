@@ -4,10 +4,9 @@ use shkeleton::{
     byteorder::ReadBytesExt,
     derive_deref::Deref,
     derive_more::From,
-    fehler::*,
     fstrings::*,
     lazy_static::lazy_static,
-    sherr::{anyhow::*, diag_position, diag_unreachable, error, log::info},
+    sherr::{diag_position, diag_unreachable, log::info, anyhow::Result as R, anyhow::anyhow},
     sync,
 };
 
@@ -43,12 +42,11 @@ fn test_failure_feature() {
     let _ = anyhow::anyhow!("some error at {}", diag_position!());
 }
 
-#[throws]
-fn may_throw() -> u8 {
+fn may_throw() -> R<u8> {
     if false {
-        throw!(anyhow!("error"))
+        return Err(anyhow!("error"));
     }
-    10
+    Ok(10)
 }
 
 #[test]
