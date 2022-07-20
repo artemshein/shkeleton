@@ -68,6 +68,8 @@ pub use regex;
 pub use sherr;
 #[doc(hidden)]
 pub use url;
+#[doc(hidden)]
+pub use iterator_ext;
 
 #[cfg(feature = "cli")]
 #[doc(hidden)]
