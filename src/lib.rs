@@ -8,6 +8,7 @@
 //! * lazy_static - macro to define a lazy static constants
 //! * array_tool - utilities for dealing with arrays
 //! * itertools - utilities for dealing with iterators
+//! * iterator-ext - extension for iterators
 //! * regex - regular expressions
 //! * url - handling URLs
 //! * percent_encoding - URL encoding

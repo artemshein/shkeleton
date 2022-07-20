@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.13.0
+
+* Added iterator-ext
+* Updated dependencies
+
 ## 0.12.0
 
 * Updated dependencies
