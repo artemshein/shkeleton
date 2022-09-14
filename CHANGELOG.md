@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.13.2
+
+* Added lazy-regex
+* Updated dependencies
+
 ## 0.13.0
 
 * Added iterator-ext

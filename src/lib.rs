@@ -10,6 +10,7 @@
 //! * itertools - utilities for dealing with iterators
 //! * iterator-ext - extension for iterators
 //! * regex - regular expressions
+//! * lazy-regex - regular expressions macros
 //! * url - handling URLs
 //! * percent_encoding - URL encoding
 //! * derive_more & derive_deref - more derive implementations
@@ -64,6 +65,8 @@ pub use lazy_static;
 pub use percent_encoding;
 #[doc(hidden)]
 pub use regex;
+#[doc(hidden)]
+pub use lazy_regex;
 #[doc(hidden)]
 pub use sherr;
 #[doc(hidden)]
